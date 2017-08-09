@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(\App\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -20,5 +20,24 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(\App\Models\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->title,
+        'slug'  => $faker->slug,
+        'status' => rand(0,1),
+        'orders' => rand(1,50)
+    ];
+});
+
+$factory->define(\App\Models\Post::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence,
+        'slug'  => $faker->slug,
+        'content' => $faker->text,
+        'user_id'   => factory(\App\Models\User::class),
+        'category_id'   => factory(\App\Models\Category::class),
     ];
 });

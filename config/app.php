@@ -184,7 +184,13 @@ return [
 
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
 
-        Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+
+        Laracasts\Flash\FlashServiceProvider::class,
+
+        Watson\Active\ActiveServiceProvider::class,
+
+        Yajra\Datatables\DatatablesServiceProvider::class,
     ],
 
     /*
@@ -237,9 +243,10 @@ return [
 
         'Setting' => anlutro\LaravelSettings\Facade::class,
 
-        'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
-
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
