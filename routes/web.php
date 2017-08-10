@@ -33,6 +33,10 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/', 'PublicController@index')->name('index');
 
+Route::get('video', 'PublicController@video')->name('video');
+
+Route::get('hinh-anh', 'PublicController@album')->name('album');
+
 Route::get('{slug}', 'PublicController@post')->name('post');
 
 Route::get('/danh-muc/{slug}', 'PublicController@category')->name('category');

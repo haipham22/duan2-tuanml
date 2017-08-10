@@ -27,4 +27,16 @@ class PublicController extends Controller
         $items = Category::whereSlug($slug)->firstOrFail();
         return view('frontend.category', compact('items'));
     }
+
+    public function video()
+    {
+
+    }
+
+    public function album()
+    {
+        $items = Category::where('name', 'Hình ảnh')->firstOrFail();
+        return view('frontend.hinhanh', compact('items'));
+    }
 }
+
