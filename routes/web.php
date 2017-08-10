@@ -32,3 +32,7 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::get('/', 'PublicController@index')->name('index');
+
+Route::get('{slug}', 'PublicController@post')->name('post');
+
+Route::get('/danh-muc/{slug}', 'PublicController@category')->name('category');
