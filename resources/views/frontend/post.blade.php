@@ -8,7 +8,7 @@
 				<h3>{{$post->name}}</h3>
 				<div class="namecate2" style="width: 300px;">{{ $post->created_at }} | {{ $post->categories->name }} </div>
 				<div style="max-width: 600px;text-align: justify;margin-top: 15px;margin-left: 20px">
-                    {!! $post->content !!}
+                    {!! htmlspecialchars_decode($post->content) !!}
 				</div>
 				<div style="width: 100%;height: 1px;background-color: #333;float: left;margin-top: 30px;"></div>
 				<div class="binhluan">
