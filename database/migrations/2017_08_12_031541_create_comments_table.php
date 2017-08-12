@@ -18,7 +18,8 @@ class CreateCommentsTable extends Migration
             $table->string('name');
             $table->text('content');
             $table->integer('post_id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable()->default(0);
+            $table->boolean('public')->default(0);
             $table->timestamps();
         });
     }

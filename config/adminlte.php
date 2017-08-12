@@ -120,12 +120,18 @@ return [
                 [
                     'route'  => 'posts.create',
                     'text' => 'Thêm bài viết',
-                ],
-                [
-                    'route'  => 'categories.index',
-                    'text' => 'Chuyên mục',
                 ]
             ]
+        ],
+        [
+            'text' => 'Bình luận',
+            'route' => 'comments.index',
+            'icon'  => 'commenting-o ',
+        ],
+        [
+            'route'  => 'categories.index',
+            'text' => 'Chuyên mục',
+            'icon'  => 'folder-o',
         ],
         [
             'text'        => 'Thành viên',

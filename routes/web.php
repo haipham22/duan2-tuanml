@@ -23,6 +23,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('users', 'UserController');
     Route::resource('posts', 'PostController');
     Route::resource('categories', 'CategoryController');
+    Route::resource('comments', 'CommentController');
 
     Route::prefix('settings')->group(function () {
         Route::get('general', 'SettingController@general')->name('settings.index');
@@ -32,6 +33,10 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::get('/', 'PublicController@index')->name('index');
+
+Route::get('tim-kiem', 'PublicController@search')->name('search');
+
+Route::post('them-binh-luan', 'PublicController@addComment')->name('comment.add');
 
 Route::get('video', 'PublicController@video')->name('video');
 

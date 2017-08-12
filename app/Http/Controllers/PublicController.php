@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use View;
@@ -45,6 +46,13 @@ class PublicController extends Controller
         return view('frontend.category', compact('items'));
     }
 
+    public function search(Request $request)
+    {
+        $items = Post::where('name', 'like', "%$request->s%")->orderByDesc('created_at')->get();
+
+        return view('frontend.search', compact('items'));
+    }
+/*
     public function video()
     {
 
@@ -54,6 +62,22 @@ class PublicController extends Controller
     {
         $items = Category::where('name', 'Hình ảnh')->firstOrFail();
         return view('frontend.hinhanh', compact('items'));
+    }*/
+
+    public function addComment(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'content'   => 'required|min:10|max:100'
+        ]);
+        $input = $request->all();
+
+        if (\Auth::check()) {
+            $input['public'] = 1;
+        }
+        Comment::create($input);
+
+        return redirect()->back();
     }
 }
 

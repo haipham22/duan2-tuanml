@@ -67,4 +67,14 @@ return [
     'seo'             => 'SEO',
     'seo.title'       => 'Tiêu đề SEO',
     'seo.description' => 'Mô tả SEO',
+
+    'comments'         => 'Bình luận',
+    'comments.create'  => 'Thêm bình luận',
+    'comments.created' => 'Thêm bình luận thành công',
+    'comments.deleted' => 'Xóa bình luận thành công',
+    'comments.edit'    => 'Sửa bình luận',
+    'comments.index'   => 'Danh sách bình luận',
+    'comments.reply'   => 'Trả lời',
+    'comments.success' => 'Cám ơn bạn đã đánh giá. Đánh giá đã được gửi đến quản trị trước khi được chấp nhận.',
+    'comments.updated' => 'Sửa bình luận thành công',
 ];

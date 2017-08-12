@@ -26,25 +26,18 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="boxtimkiem">
-                        <a>
-                            <img src="images/i-fb.jpg">
-                            <img src="images/i-youtube.jpg">
-                            <input type="text" class="timkiem">
-                            <button type="button" class="nuttim" placeholder="aa">
+                        <form action="{{ route('search') }}">
+                            {{--<img src="images/i-fb.jpg">
+                            <img src="images/i-youtube.jpg">--}}
+                            <input type="text" class="timkiem" name="s">
+                            <button class="nuttim" placeholder="aa">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
-                        </a>
+                        </form>
                     </li>
 
                 </ul>
-                <ul class="nav navbar-nav navbar-right" style="padding: 10px;">
-                    <a href="{{ route('register') }}"><button type="button" class="btn btn-info">
-                            <span class="glyphicon glyphicon-log-in"></span> Đăng kí
-                        </button></a>
-                    <a href="{{ route('login') }}"><button type="button" class="btn btn-info">
-                            <span class="glyphicon glyphicon-user"></span> Đăng nhập
-                        </button></a>
-                </ul>
+
             </div>
         </nav>
     </div>
