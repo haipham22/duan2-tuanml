@@ -100,8 +100,8 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        {!! Form::label('image', trans('lang.images')) !!}
-                        {!! Form::text('image', old('image'), ['class' => 'form-control ckfinder']) !!}
+                        {!! Form::label('thumbnail', trans('lang.thumbnails')) !!}
+                        {!! Form::text('thumbnail', old('thumbnail'), ['class' => 'form-control ckfinder']) !!}
                     </div>
                 </div>
             </div>

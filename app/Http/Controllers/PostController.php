@@ -89,13 +89,17 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param \App\Http\Requests\PostRequest|\Illuminate\Http\Request $request
+     * @param  \App\Models\Post $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+
+        flash(trans('lang.posts.updated'))->success();
+
+        return redirect()->back();
     }
 
     /**

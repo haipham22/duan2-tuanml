@@ -5,9 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use View;
 
 class PublicController extends Controller
 {
+
+    public function __construct()
+    {
+        view()->composer('layouts.menu', function ($view) {
+            return $view->with([
+                'menu'  => Category::orderByDesc('id')->get()
+            ]);
+        });
+    }
+
     public function index()
     {
         $posts = Post::orderByDesc('created_at')->get();

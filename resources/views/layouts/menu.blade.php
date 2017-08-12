@@ -6,7 +6,12 @@
                     <a class="navbar-brand" id="navbar-brand" href="{{ route('index') }}"  style="color: #fff">Trang chủ</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li>
+                    @foreach($menu as $item)
+                        <li>
+                            <a href="{{ route('category', $item->slug) }}" style="color: #fff">{{ $item->name }}</a>
+                        </li>
+                    @endforeach
+                    {{--<li>
                         <a href="/danh-muc/tin-game" style="color: #fff">Tin game</a>
                     </li>
                     <li>
@@ -17,7 +22,7 @@
                     </li>
                     <li>
                         <a href="/hinh-anh" style="color: #fff">Hình ảnh</a>
-                    </li>
+                    </li>--}}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="boxtimkiem">
