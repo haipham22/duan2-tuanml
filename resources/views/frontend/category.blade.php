@@ -10,7 +10,8 @@
                             {{ $items->name }}
                         </div>
                     </div>
-                    @foreach($items->posts as $item)
+                    @php($posts = $items->posts()->paginate(12))
+                    @foreach($posts as $item)
                     <div class="col-md-6 tinprimary" style="padding-left: 0px;">
                         <a href="{{ route('post', $item->slug) }}">
                             <img src="{{ asset($item->thumbnail) }}" style="width: 100%;">
@@ -19,10 +20,14 @@
                         <p>{!! str_limit(strip_tags($item->content)) !!}</p>
                         {{--<div class="themprimary">--}}
                             {{--<span>●</span></span><a href="{{ $tin3link }}"> {{$tin3title}}</a>--}}
-
                         {{--</div>--}}
                     </div>
                     @endforeach
+
+                    <div class="clearfix"></div>
+                    <nav class="pagination">
+                        {{ $posts->links() }}
+                    </nav>
                 </div>
                 {{--<div class="tinesport">--}}
                     {{--<div class="primarymenu">--}}

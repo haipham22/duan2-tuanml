@@ -30,12 +30,18 @@ class PublicController extends Controller
 
         $cosplays = Category::whereName('Hình Ảnh')->first();
 
-        return view('frontend.index', compact('posts', 'games', 'esport', 'cosplays'));
+        $hot_news = Post::orderByDesc('view')->limit(5)->get();
+
+        return view('frontend.index', compact(
+            'posts', 'games', 'esport', 'cosplays', 'hot_news'
+        ));
     }
 
     public function post($slug)
     {
         $post = Post::whereSlug($slug)->firstOrFail();
+
+        \Event::fire('post.view', $post);
 
         return view('frontend.post', compact('post'));
     }

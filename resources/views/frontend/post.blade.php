@@ -6,7 +6,7 @@
 		<div class="blockrows">
 			<div class="primary col-md-8">
 				<h3>{{$post->name}}</h3>
-				<div class="namecate2" style="width: 300px;">{{ $post->created_at }} | {{ $post->categories->name }} </div>
+				<div class="namecate2" style="width: 300px;">{{ $post->created_at }} | {{ $post->categories->name }} | {{ $post->users->name }} | {{ number_format($post->view) }} </div>
 				<div style="max-width: 600px;text-align: justify;margin-top: 15px;margin-left: 20px">
                     {!! htmlspecialchars_decode($post->content) !!}
 				</div>

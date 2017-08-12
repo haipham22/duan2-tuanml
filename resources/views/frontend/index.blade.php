@@ -50,27 +50,29 @@
                     @endforeach
                 </div>
             </div>
-            {{--<div class="secondarys col-md-4">
+            <div class="secondarys col-md-4">
                 <div class="secondary">
                     <div class="secondaryheader">
-                        Tin game
+                        Tin nổi bật
                     </div>
                 </div>
                 <div class=" tinprimary" style="padding-left: 0px;">
-                    <img src="img/kayn_shadow_assasin_by_rikamarika-dbgc8h4-2.jpg" style="width: 100%;">
-                    <a href="">
-                        <h2>Tham khảo những bộ trang bị mà Kayn có thể lên ở mỗi dạng</h2>
+                    @foreach($hot_news as $news)
+                    @if($loop->index == 0)
+                    <img src="{{ asset($news->thumbnail) }}" style="width: 100%;">
+                    <a href="{{ route('post', $news->slug) }}">
+                        <h2>{{ $news->name }}</h2>
                     </a>
-                    <p>Cùng xem những bộ trang bị nào phù hợp nhất với Kayn nhé</p>
+                    <p>{{ str_limit(strip_tags($news->content)) }}</p>
+                    @else
                     <div class="themprimary">
-                        <span>●</span></span><a href=""> Hướng dẫn xây dựng trang bị cho cả Kayn ở cả hai dạng Darkin và Sát Thủ</a>
+                        <span>●</span></span><a href=""> {{ $news->name }}</a>
                     </div>
-                    <div class="themprimary">
-                        <span>●</span><a href=""> Hướng dẫn cộng bảng ngọc và bổ trợ cho Kayn ở vị trí đi rừng</a>
-                    </div>
+                    @endif
+                    @endforeach
                 </div>
                 <img src="img/topup-rp-298x397.jpg" style="width: 100%;">
-            </div>--}}
+            </div>
             <div class="col-md-12">
                 <div class="tinesport">
                     <div class="primarymenu">
@@ -82,7 +84,7 @@
                     @foreach($cosplays->posts->sortByDesc('created_at')->take(4) as $post)
                     <div class="col-md-3 cosplay">
                         <img src="{{ asset($post->thumbnail) }}" style="width: 100%">
-                        <a href="">{{ $post->name }}</a>
+                        <a href="{{ route('post', $post->slug) }}">{{ $post->name }}</a>
                     </div>
                     @endforeach
                     @endif

@@ -12,6 +12,7 @@
         $('table').DataTable({
             processing: true,
             serverSide: true,
+            searching: false,
             ajax: '',
             columns: [
                 { data: 'id', name: 'id', orderable: false, searchable: false },
