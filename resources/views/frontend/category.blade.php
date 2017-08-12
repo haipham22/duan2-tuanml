@@ -12,7 +12,7 @@
                     </div>
                     @php($posts = $items->posts()->paginate(12))
                     @foreach($posts->chunk(2) as $post)
-                    <div class="row">
+                    <div class="row" style="padding: 15px;">
                         @foreach($post as $item)
                             <div class="col-md-6 tinprimary" style="padding-left: 0px;">
                                 <a href="{{ route('post', $item->slug) }}">
@@ -65,7 +65,7 @@
                 @foreach($items->posts as $item)
                     <div class="col-md-3 cosplay">
                         <img src="{{ asset($item->thumbnail) }}" style="width: 100%">
-                        <a href="">{{$item->name}}</a>
+                        <a href="{{ route('post', $item->slug) }}">{{$item->name}}</a>
                     </div>
                 @endforeach
             </div>

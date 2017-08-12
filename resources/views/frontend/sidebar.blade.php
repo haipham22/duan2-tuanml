@@ -14,7 +14,7 @@
                 <p>{{ str_limit(strip_tags($news->content)) }}</p>
             @else
                 <div class="themprimary">
-                    <span>●</span></span><a href=""> {{ $news->name }}</a>
+                    <span>●</span></span><a href="{{ route('post', $news->slug) }}"> {{ $news->name }}</a>
                 </div>
             @endif
         @endforeach
