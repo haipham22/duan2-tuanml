@@ -54,27 +54,7 @@
 					@endif
 				</div>
 			</div>
-			{{--<div class="secondarys col-md-4"><!-- --}}
-				{{--<div class="secondary">--}}
-					{{--<div class="secondaryheader">--}}
-						{{--Tin game--}}
-					{{--</div>--}}
-				{{--</div>--}}
-				{{--<div class=" tinprimary" style="padding-left: 0px;">--}}
-					{{--<img src="{{url('public/index')}}/img/kayn_shadow_assasin_by_rikamarika-dbgc8h4-2.jpg" style="width: 100%;">--}}
-					{{--<a href="">--}}
-						{{--<h2>Tham khảo những bộ trang bị mà Kayn có thể lên ở mỗi dạng</h2>--}}
-					{{--</a>--}}
-					{{--<p>Cùng xem những bộ trang bị nào phù hợp nhất với Kayn nhé</p>--}}
-					{{--<div class="themprimary">--}}
-						{{--<span>●</span></span><a href=""> Hướng dẫn xây dựng trang bị cho cả Kayn ở cả hai dạng Darkin và Sát Thủ</a>--}}
-					{{--</div>--}}
-					{{--<div class="themprimary">--}}
-						{{--<span>●</span><a href=""> Hướng dẫn cộng bảng ngọc và bổ trợ cho Kayn ở vị trí đi rừng</a>--}}
-					{{--</div>--}}
-				{{--</div> -->--}}
-				{{--<img src="{{url('public/index')}}/img/topup-rp-298x397.jpg" style="width: 100%;">--}}
-			{{--</div>--}}
+			@include('frontend.sidebar')
 		</div>
 	</section>
 @endsection

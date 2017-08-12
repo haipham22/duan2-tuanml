@@ -18,6 +18,11 @@ class PublicController extends Controller
                 'menu'  => Category::orderByDesc('id')->get()
             ]);
         });
+        view()->composer('frontend.sidebar', function ($view) {
+            return $view->with([
+                'hot_news' => Post::orderByDesc('view')->limit(5)->get()
+            ]);
+        });
     }
 
     public function index()
@@ -30,10 +35,8 @@ class PublicController extends Controller
 
         $cosplays = Category::whereName('Hình Ảnh')->first();
 
-        $hot_news = Post::orderByDesc('view')->limit(5)->get();
-
         return view('frontend.index', compact(
-            'posts', 'games', 'esport', 'cosplays', 'hot_news'
+            'posts', 'games', 'esport', 'cosplays'
         ));
     }
 

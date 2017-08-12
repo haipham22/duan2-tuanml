@@ -11,19 +11,20 @@
                         </div>
                     </div>
                     @php($posts = $items->posts()->paginate(12))
-                    @foreach($posts as $item)
-                    <div class="col-md-6 tinprimary" style="padding-left: 0px;">
-                        <a href="{{ route('post', $item->slug) }}">
-                            <img src="{{ asset($item->thumbnail) }}" style="width: 100%;">
-                            <h2>{{$item->name}}</h2>
-                        </a>
-                        <p>{!! str_limit(strip_tags($item->content)) !!}</p>
-                        {{--<div class="themprimary">--}}
-                            {{--<span>●</span></span><a href="{{ $tin3link }}"> {{$tin3title}}</a>--}}
-                        {{--</div>--}}
+                    @foreach($posts->chunk(2) as $post)
+                    <div class="row">
+                        @foreach($post as $item)
+                            <div class="col-md-6 tinprimary" style="padding-left: 0px;">
+                                <a href="{{ route('post', $item->slug) }}">
+                                    <img src="{{ asset($item->thumbnail) }}" style="width: 100%;">
+                                    <h2>{{$item->name}}</h2>
+                                </a>
+                                <p>{!! str_limit(strip_tags($item->content)) !!}</p>
+                            </div>
+                        @endforeach
                     </div>
-                    @endforeach
 
+                    @endforeach
                     <div class="clearfix"></div>
                     <nav class="pagination">
                         {{ $posts->links() }}
