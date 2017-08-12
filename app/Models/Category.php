@@ -18,23 +18,7 @@ class Category extends Model
      */
     public $timestamps = false;
 
-    protected static function boot()
-    {
-        parent::boot();
-        static::deleting(function ($model) {
-            return $model->changeCateID();
-        });
-    }
 
-
-    private function changeCateID()
-    {
-        return $this->posts->each(function ($item) {
-            return $item->update([
-                'category_id' => 1,
-            ]);
-        });
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -44,14 +28,14 @@ class Category extends Model
         return $this->hasMany(Post::class, 'category_id');
     }
 
+    /**
+     * @param $value
+     * @return mixed
+     */
     public function setNameAttribute($value)
     {
         return $this->attributes['name'] = empty($value) ? : ($value);
     }
 
-    public function setCountAttribute()
-    {
-        return $this->attributes['count'] = !$this->posts()->count() > 0 ? $this->posts()->count() :0;
-    }
 
 }

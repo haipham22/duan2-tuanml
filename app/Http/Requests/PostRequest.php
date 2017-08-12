@@ -23,7 +23,7 @@ class PostRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->post ? ',' . $this->post : null;
+        $id = is_object($this->post) ? ',' . $this->post->id : null;
         return [
             'name'  => 'required|unique:posts,name' . $id,
             'slug' => 'required|regex:/([\/\w \.-]*)*\/?$/|unique:posts,slug' . $id,
