@@ -23,7 +23,13 @@ class PublicController extends Controller
     {
         $posts = Post::orderByDesc('created_at')->get();
 
-        return view('frontend.index', compact('posts'));
+        $games = Category::whereName('Tin Game')->first();
+
+        $esport = Category::whereName('Tin Esport')->first();
+
+        $cosplays = Category::whereName('Hình Ảnh')->first();
+
+        return view('frontend.index', compact('posts', 'games', 'esport', 'cosplays'));
     }
 
     public function post($slug)

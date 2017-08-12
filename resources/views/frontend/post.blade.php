@@ -6,7 +6,7 @@
 		<div class="blockrows">
 			<div class="primary col-md-8">
 				<h3>{{$post->name}}</h3>
-				<div class="namecate2" style="width: 300px;">{{$post->created_at}} | {{$post->categories->name}} </div>
+				<div class="namecate2" style="width: 300px;">{{ $post->created_at }} | {{ $post->categories->name }} </div>
 				<div style="max-width: 600px;text-align: justify;margin-top: 15px;margin-left: 20px">
                     {!! $post->content !!}
 				</div>
@@ -15,25 +15,12 @@
 					<textarea rows="5"  class="form-control" name="content"></textarea>
 					<button class="btn btn-flat" style="margin-top: 10px;">Đăng bình luận</button>
 					<div style="float: right;margin-top: 10px;">
-						<img src="{{url('public/index')}}/images/i-fb.jpg">
-						<img src="{{url('public/index')}}/images/i-youtube.jpg">
+						<img src="{{ asset('images/i-fb.jpg') }}">
+						<img src="{{ asset('images/i-youtube.jpg') }}">
 					</div>
 					<div class="comment">
 						<div style="border: 2px #333 solid;width: 154px;float: left;">
-							<img src="{{url('public/index')}}/img/qua-xoai.jpg" style="width: 150px;height: 150px;">
-						</div>
-						<div class="noidung">
-							<b>Quả xoài</b>
-							<span class="date">
-								11:35 18/07/2017
-							</span>
-							<p>Tôi thấy bài viết này rất hay...</p>
-						</div>
-						<input type="button" value="Trả lời" name="" class="traloi btn btn-flat" >
-					</div>
-					<div class="comment">
-						<div style="border: 2px #333 solid;width: 154px;float: left;">
-							<img src="{{url('public/index')}}/img/qua-xoai.jpg" style="width: 150px;height: 150px;">
+							<img src="{{ asset('img/qua-xoai.jpg') }}" style="width: 150px;height: 150px;">
 						</div>
 						<div class="noidung">
 							<b>Quả xoài</b>

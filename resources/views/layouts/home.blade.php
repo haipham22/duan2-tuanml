@@ -24,7 +24,7 @@
 <footer>
     <div class="container">
         <div class="col-md-8 footer">
-            <p>Copyright © 2017 Liên Minh 360. All Rights Reserved</p>
+            <p>Copyright © {{ date('Y') }} Liên Minh 360. All Rights Reserved</p>
             <ul>
                 <li></li>
                 <li>TIN GAME</li>
