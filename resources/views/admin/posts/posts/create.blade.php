@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box">
+            {{--<div class="box">
                 <div class="box-header">
                     <h3 class="box-title">
                         @lang('lang.seo')
@@ -87,7 +87,7 @@
                         @endif
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
         <div class="col-md-4">
             <div class="box">

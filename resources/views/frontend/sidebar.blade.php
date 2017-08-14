@@ -19,7 +19,7 @@
             @endif
         @endforeach
     </div>
-    <a href="http://javhd.pro">
+    <a href="//lienminh.garena.vn/khuyen-mai-game/khuyen-mai-cac-trang-phuc-huyet-nguyet-10-02-19-02">
         <img src="img/topup-rp-298x397.jpg" style="width: 100%;">
     </a>
 </div>

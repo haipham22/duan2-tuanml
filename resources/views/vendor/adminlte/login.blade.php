@@ -54,12 +54,12 @@
                     </div>
                     <!-- /.col -->
                 </div>
-            </form>
+            </form>{{--
             <div class="social-auth-links text-center">
                 <p></p>
                 <a href="{!! url('login/facebook') !!}" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> @lang('adminlte::adminlte.sign_in_facebook')</a>
                 <a href="{!! url('login/google') !!}" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> @lang('adminlte::adminlte.sign_in_google')</a>
-            </div>
+            </div>--}}
             <div class="auth-links">
                 <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}"
                    class="text-center"

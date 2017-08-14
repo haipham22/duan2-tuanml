@@ -1,6 +1,12 @@
 html {
 	background: url(../images/bg-main.jpg) top center no-repeat #ececec;
 }
+a:hover {
+	text-decoration: none;
+}
+a {
+	color: #333;
+}
 body {
     font-size: 16px;
     font-family: Roboto,Arial,Helvetica,sans-serif!important;
@@ -20,6 +26,12 @@ body, dd, div, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, html, img, inpu
 header {
 	margin-top: 10px;
 }
+#timkiemdvm {
+	margin-top: 15px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
 .wapper {
     background-color: #fff;
     padding: 0px;
@@ -32,28 +44,24 @@ header {
 	position: relative;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-	background-image: url(../img/banner1.jpg);
 }
 .topbannerrighttop {
 	height: 245px;
 	padding: 0px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-	background-image: url(../img/Untitled-35.png);
 }
 .topbannerrightbot {
 	padding: 0px;
 }
 .boxleft1 {
 	height: 200px;
-	background-image: url(../img/34941427684_eef440b4f6_z-2.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 0px;
 }
 .boxleft2 {
 	height: 200px;
-	background-image: url(../img/34941427684_eef440b4f6_z-1.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 	padding: 0px;
@@ -107,7 +115,8 @@ header {
 	float: left;
 	bottom: 0px;
 	position: absolute;
-	padding: 15px;
+	padding: 30px;
+	width: 100%;
     background: url(../images/shadow.png) bottom left repeat-x;
 }
 .namecate {

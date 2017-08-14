@@ -16,11 +16,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('admin')->group(function () {
+Route::middleware(['auth', 'role'])->prefix('admin')->group(function () {
 
     Route::get('/', 'HomeController@index');
 
     Route::resource('users', 'UserController');
+
     Route::resource('posts', 'PostController');
     Route::resource('categories', 'CategoryController');
     Route::resource('comments', 'CommentController');

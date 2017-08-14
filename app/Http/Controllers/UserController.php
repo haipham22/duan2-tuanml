@@ -61,9 +61,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        if (\Auth::user()->is_admin) {
+            return view('admin.users.show', compact('user'));
+        }
+        flash('Bạn không đủ quyền để thực hiện hành động này')->warning();
+        return redirect()->back();
     }
 
     /**
@@ -94,6 +98,9 @@ class UserController extends Controller
                 'password' => 'min:8|max:20|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
             ])->validate();
             $user->password = bcrypt($request->password);
+        }
+        if ($request->has('role')) {
+            $user->role = $request->get('role');
         }
 
         $user->update();

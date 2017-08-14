@@ -39,6 +39,7 @@
                                     <td>{!! $user->email !!}</td>
                                     <td>{!! $user->created_at->diffForHumans() !!}</td>
                                     <td>
+                                        {{ link_to_route('users.show', 'Phân quyền', $user->id, ['class' => 'btn btn-success btn-xs']) }}
                                         {!! Form::open(['method' => 'DELETE', 'url' => route('users.destroy', $user->id)]) !!}
                                             {!! Form::submit(trans('lang.delete'), ['class' => 'delete btn btn-danger btn-xs']) !!}
                                         {!! Form::close() !!}

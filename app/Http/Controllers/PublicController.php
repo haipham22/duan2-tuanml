@@ -81,7 +81,7 @@ class PublicController extends Controller
         ]);
         $input = $request->all();
 
-        if (\Auth::check()) {
+        if (\Auth::check() && \Auth::user()->is_admin) {
             $input['public'] = 1;
         }
         Comment::create($input);

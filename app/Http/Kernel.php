@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \anlutro\LaravelSettings\SaveMiddleware::class,
+        \App\Http\Middleware\FilterView::class
     ];
 
     /**
@@ -57,6 +58,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'filter'    => \ThangLong\Http\Middleware\FilterView::class,
+        'role'  => \App\Http\Middleware\ValidateAdmin::class,
     ];
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ThangLong\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 
