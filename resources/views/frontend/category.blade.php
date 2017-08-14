@@ -51,24 +51,24 @@
                     {{--@endforeach--}}
                 {{--</div>--}}
             </div>
-            <div class="secondarys col-md-4">
-                <img src="{{ asset('img/topup-rp-298x397.jpg') }}" style="width: 100%;">
-            </div>
+            @include('frontend.sidebar')
         </div>
-        <div class="primary col-md-12">
-            <div class="tinesport">
-                <div class="primarymenu">
-                    <div class="primarymenuheader">
-                        {{ $items->name }}
-                    </div>
-                </div>
-                @foreach($items->posts as $item)
-                    <div class="col-md-3 cosplay">
-                        <img src="{{ asset($item->thumbnail) }}" style="width: 100%">
-                        <a href="{{ route('post', $item->slug) }}">{{$item->name}}</a>
-                    </div>
-                @endforeach
-            </div>
-        </div>
+        {{--<div class="primary col-md-12">--}}
+            {{--<div class="tinesport">--}}
+                {{--<div class="primarymenu">--}}
+                    {{--<div class="primarymenuheader">--}}
+                        {{--{{ $items->name }}--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--@foreach($items->posts->take(4) as $item)--}}
+                    {{--<div class="col-md-3 cosplay">--}}
+                        {{--<a href="{{ route('post', $item->slug) }}">--}}
+                            {{--<img src="{{ asset($item->thumbnail) }}" style="width: 100%">--}}
+                        {{--</a>--}}
+                        {{--<a href="{{ route('post', $item->slug) }}">{{$item->name}}</a>--}}
+                    {{--</div>--}}
+                {{--@endforeach--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </section>
 @endsection
