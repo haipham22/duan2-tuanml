@@ -7,7 +7,9 @@
     <div class=" tinprimary" style="padding-left: 0px;">
         @foreach($hot_news as $news)
             @if($loop->index == 0)
-                <img src="{{ asset($news->thumbnail) }}" style="width: 100%;">
+                <a href="{{ route('post', $news->slug) }}">
+                    <img src="{{ asset($news->thumbnail) }}" style="width: 100%;">
+                </a>
                 <a href="{{ route('post', $news->slug) }}">
                     <h2>{{ $news->name }}</h2>
                 </a>

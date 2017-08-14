@@ -37,9 +37,9 @@
                     </div>
                     @foreach($esport->posts()->orderByDesc('created_at')->get()->take(4) as $post)
                     <div class="col-md-12 tinprimary" style="padding-left: 0px;">
-                        <div class="col-md-4 tinmucngang">
+                        <a href="{{ route('post', $post->slug) }}" class="col-md-4 tinmucngang">
                             <img src="{{ asset($post->thumbnail) }}">
-                        </div>
+                        </a>
                         <div class="col-md-8 tinmucngang">
                             <a href="{{ route('post', $post->slug) }}">
                                 <h3>{{ $post->name }}</h3>
