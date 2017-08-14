@@ -6,6 +6,7 @@
             <div class="col-md-6 nopadding topbannerleft">
                 <div class="namecate">{{ $item->categories->name }}</div>
                 <a href="{{ route('post', $item->slug) }}">
+                    <img src="{{ asset($item->thumbnail) }}" alt="{{ $item->name }}">
                     <div class="textinbox">
                         <h3>{{ $item->name }}</h3>
                     </div>
@@ -16,6 +17,7 @@
                 <div class="col-md-12 topbannerrighttop">
                     <div class="namecate">{{ $item->categories->name }}</div>
                     <a href="{{ route('post', $item->slug) }}">
+                        <img src="{{ asset($item->thumbnail) }}" alt="{{ $item->name }}">
                         <div class="textinbox">
                             <h3>{{ $item->name }}</h3>
                         </div>
@@ -26,6 +28,7 @@
                     <div class="col-md-6  boxleft1">
                         <div class="namecate">{{ $item->categories->name }}</div>
                         <a href="{{ route('post', $item->slug) }}">
+                            <img src="{{ asset($item->thumbnail) }}" alt="{{ $item->name }}">
                             <div class="textinbox">
                                 <h3>{{ $item->name }}</h3>
                             </div>
@@ -35,6 +38,7 @@
                     <div class="col-md-6 boxleft2">
                         <div class="namecate">{{ $item->categories->name }}</div>
                         <a href="{{ route('post', $item->slug) }}">
+                            <img src="{{ asset($item->thumbnail) }}" alt="{{ $item->name }}">
                             <div class="textinbox">
                                 <h3>{{ $item->name }}</h3>
                             </div>

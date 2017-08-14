@@ -61,7 +61,9 @@
                     @if($cosplays->posts->count() > 0)
                     @foreach($cosplays->posts->sortByDesc('created_at')->take(4) as $post)
                     <div class="col-md-3 cosplay">
-                        <img src="{{ asset($post->thumbnail) }}" style="width: 100%">
+                        <a href="{{ route('post', $post->slug) }}">
+                            <img src="{{ asset($post->thumbnail) }}" style="width: 100%">
+                        </a>
                         <a href="{{ route('post', $post->slug) }}">{{ $post->name }}</a>
                     </div>
                     @endforeach

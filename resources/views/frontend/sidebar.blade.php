@@ -20,6 +20,6 @@
         @endforeach
     </div>
     <a href="//lienminh.garena.vn/khuyen-mai-game/khuyen-mai-cac-trang-phuc-huyet-nguyet-10-02-19-02">
-        <img src="img/topup-rp-298x397.jpg" style="width: 100%;">
+        <img src="{{ asset('img/topup-rp-298x397.jpg') }}" style="width: 100%;">
     </a>
 </div>
